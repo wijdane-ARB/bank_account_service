@@ -1,10 +1,10 @@
-package ma.enset.aarroub.wijdane.bank_account_service2;
+package ma.enset.aarroub.wijdane.bank_account_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BankAccountService2ApplicationTests {
+class BankAccountServiceApplicationTests {
 
     @Test
     void contextLoads() {

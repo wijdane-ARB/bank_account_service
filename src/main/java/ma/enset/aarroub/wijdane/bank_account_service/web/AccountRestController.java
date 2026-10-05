@@ -3,6 +3,7 @@ package ma.enset.aarroub.wijdane.bank_account_service.web;
 import ma.enset.aarroub.wijdane.bank_account_service.DTO.BankAccountRequestDTO;
 import ma.enset.aarroub.wijdane.bank_account_service.DTO.BankAccountResponseDTO;
 import ma.enset.aarroub.wijdane.bank_account_service.entity.BankAccount;
+import ma.enset.aarroub.wijdane.bank_account_service.mappers.AccountMapper;
 import ma.enset.aarroub.wijdane.bank_account_service.repositories.BankAccountRepo;
 import ma.enset.aarroub.wijdane.bank_account_service.service.AccountService;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +18,12 @@ public class AccountRestController {
 
     private BankAccountRepo bankAccountRepo;
     private AccountService accountService;
+    private AccountMapper accountMapper;
 
-    public AccountRestController(BankAccountRepo bankAccountRepo) {
+    public AccountRestController(BankAccountRepo bankAccountRepo, AccountService accountService, AccountMapper accountMapper) {
         this.bankAccountRepo = bankAccountRepo;
+        this.accountService = accountService;
+        this.accountMapper = accountMapper;
     }
 
     @GetMapping
